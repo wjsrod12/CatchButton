@@ -28,12 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            target = new Button();
+            SuspendLayout();
+            // 
+            // target
+            // 
+            target.BackColor = Color.DarkKhaki;
+            target.ForeColor = SystemColors.ControlText;
+            target.Location = new Point(594, 233);
+            target.Name = "target";
+            target.Size = new Size(160, 100);
+            target.TabIndex = 0;
+            target.Text = "XD";
+            target.UseVisualStyleBackColor = false;
+            target.LocationChanged += target_LocationChanged;
+            target.Click += target_Click;
+            target.MouseEnter += target_MouseEnter;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Text = "Form1";
+            ClientSize = new Size(784, 443);
+            Controls.Add(target);
+            Name = "Form1";
+            Text = "Catch the button version 1";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button target;
     }
 }
