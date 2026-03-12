@@ -34,6 +34,7 @@
             // target
             // 
             target.BackColor = Color.DarkKhaki;
+            target.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
             target.ForeColor = SystemColors.ControlText;
             target.Location = new Point(594, 233);
             target.Name = "target";
