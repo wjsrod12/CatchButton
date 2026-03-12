@@ -1,10 +1,19 @@
+using System.Runtime.CompilerServices;
+using static System.Net.Mime.MediaTypeNames;
+
+
 namespace CatchButton
 {
     public partial class Form1 : System.Windows.Forms.Form
     {
+        int score = 100;
+
         public Form1()
         {
             InitializeComponent();
+            this.Text = "점수:" + score;
+            this.Text = "🎯 버튼 잡기 게임 | 점수 : " + score;
+
         }
 
         private void target_MouseEnter(object sender, EventArgs e)
@@ -25,6 +34,21 @@ namespace CatchButton
 
             //시각적 피드백, 움직이는 버튼의 좌표를 출력함.
             this.Text = $"버튼 위치: ({nextX}, {nextY})";
+
+            score -= 10;
+            this.Text = "🎯 버튼 잡기 게임 | 점수 : " + score;
+
+            if (score <= 0)
+            {
+                MessageBox.Show(
+                    "못 잡았다... 게임 종료",
+                    "실패",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+
+                System.Windows.Forms.Application.Exit();
+            }
         }
 
         private void target_Click(object sender, EventArgs e)
@@ -34,7 +58,34 @@ namespace CatchButton
 
         private void target_LocationChanged(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void target_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            target.Width = (int)(target.Width * 0.9);
+            target.Height = (int)(target.Height * 0.9);
+
+            this.Text = $"축하합니다!";
+
+            score += 100;
+            this.Text = "🎯 버튼 잡기 게임 | 점수 : " + score;
+
+
+            if (score >= 1000)
+            { 
+                MessageBox.Show(
+                    "축하합니다! 게임에서 승리 하셨습니다!", 
+                    "성공",
+                     MessageBoxButtons.OK,
+                     MessageBoxIcon.Information
+                 );
+                System.Windows.Forms.Application.Exit();
+            }
+
+
+
         }
     }
 }

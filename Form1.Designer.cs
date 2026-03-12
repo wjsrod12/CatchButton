@@ -43,6 +43,7 @@
             target.UseVisualStyleBackColor = false;
             target.LocationChanged += target_LocationChanged;
             target.Click += target_Click;
+            target.MouseDown += target_MouseDown;
             target.MouseEnter += target_MouseEnter;
             // 
             // Form1
