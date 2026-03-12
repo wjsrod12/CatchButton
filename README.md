@@ -49,4 +49,5 @@ C#프로그래밍 학습/
 <img width="770" height="466" alt="image" src="https://github.com/user-attachments/assets/0b69d398-e3a6-4281-85ae-69f4520ca43f" />
 
 
+요번 프로젝트로. 기본적인 게임을 만들수 있게 되었다.
 
