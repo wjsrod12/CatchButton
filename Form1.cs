@@ -34,10 +34,7 @@ namespace CatchButton
 
         private void target_LocationChanged(object sender, EventArgs e)
         {
-            int x_position = 100;
-            int y_position = 150;
-
-            target.Location = new Point(x_position, y_position);
+            
         }
     }
 }
