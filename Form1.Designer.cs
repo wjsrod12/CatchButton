@@ -40,7 +40,7 @@
             target.Name = "target";
             target.Size = new Size(160, 100);
             target.TabIndex = 0;
-            target.Text = "XD";
+            target.Text = "나를 잡아봐!";
             target.UseVisualStyleBackColor = false;
             target.LocationChanged += target_LocationChanged;
             target.Click += target_Click;
