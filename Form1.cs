@@ -1,5 +1,6 @@
 using System.Runtime.CompilerServices;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 
 namespace CatchButton
@@ -7,6 +8,21 @@ namespace CatchButton
     public partial class Form1 : System.Windows.Forms.Form
     {
         int score = 100;
+
+        void RestartGame()
+        {
+            score = 500;
+            this.Text = "🎯 버튼 잡기 게임 | 점수 : " + score;
+
+            target.Width = 100;
+            target.Height = 40;
+
+            int MaxX = this.ClientSize.Width - target.Width;
+            int MaxY = this.ClientSize.Height - target.Height;
+
+            Random rd = new Random();
+            target.Location = new Point(rd.Next(0, MaxX), rd.Next(0, MaxY));
+        }
 
         public Form1()
         {
@@ -40,14 +56,22 @@ namespace CatchButton
 
             if (score <= 0)
             {
-                MessageBox.Show(
-                    "못 잡았다... 게임 종료",
-                    "실패",
-                    MessageBoxButtons.OK,
+                DialogResult result = MessageBox.Show(
+                    "못 잡았다... 게임 종료..",
+                    "다시 도전 할까요?",
+                    MessageBoxButtons.YesNo,
                     MessageBoxIcon.Warning
                 );
 
-                System.Windows.Forms.Application.Exit();
+                if (result == DialogResult.Yes)
+                {
+                    RestartGame();
+                }
+                else
+                {
+                    System.Windows.Forms.Application.Exit();
+                }
+
             }
         }
 
