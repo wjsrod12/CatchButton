@@ -44,3 +44,9 @@ C#프로그래밍 학습/
 
 <img width="358" height="282" alt="image" src="https://github.com/user-attachments/assets/9e8c92e3-2895-47b1-a3d5-599ec94e1355" />
 
+
+-게임의 목표를 알수있게 직관적으로 수정
+<img width="770" height="466" alt="image" src="https://github.com/user-attachments/assets/0b69d398-e3a6-4281-85ae-69f4520ca43f" />
+
+
+
