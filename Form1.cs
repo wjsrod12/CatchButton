@@ -14,8 +14,8 @@ namespace CatchButton
 
             //가용 영역 계산(버튼이 창 밖으로 나가거나 창에 걸리지 않게 보호)
             //클라이언트사이즈는 창의 타이틀바하고 테두리 제외한 영역.
-            int MaxX = this.ClientSize.Width;
-            int MaxY = this.ClientSize.Height;
+            int MaxX = this.ClientSize.Width - target.Width;
+            int MaxY = this.ClientSize.Height - target.Height;
 
             int nextX = rd.Next(0, MaxX);
             int nextY = rd.Next(0, MaxY);
